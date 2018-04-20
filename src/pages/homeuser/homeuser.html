@@ -1,0 +1,96 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+     		 <ion-icon name="menu"></ion-icon>
+    	</button>
+		<ion-title>{{'menu_titleapp' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="vertical-align-content card-background-page">
+	<!--Manejo de rejillas:http://librosweb.es/libro/bootstrap_3/capitulo_2/tipos_de_rejillas.html-->
+	<ion-grid fixed >
+		<ion-row>
+			<ion-col *ngFor="let item of menu" col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2 (click)="onOpenPage(item.page)">
+				<img src={{item.image}}/>
+				<p>{{item.title | translate}}</p>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+	<!--
+	<ion-grid fixed>
+		<ion-row>
+			<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-2
+				*ngFor="let item of [1,2,3,4,5,6]">
+				<ion-card>Item </ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	-->
+	<!--
+	<ion-grid fixed>
+		<ion-row wrap>
+				<ion-col width-20 (click)="onConsumos()">
+					<img src="assets/img/imgconsumos.jpg"/>
+					<p>{{'consumos_title' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onEstadoCuenta()">
+					<img src="assets/img/imgestadocuenta.jpg"/>
+					<p>{{'mnu_estadocuenta' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onIngresos()">
+					<img src="assets/img/imgingresos.jpg"/>
+					<p>{{'mnu_ingresos' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onPedidos()">
+					<img src="assets/img/imgpedidos.jpg"/>
+					<p>{{'mnu_pedidos' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onEventos()">
+					<img src="assets/img/imgeventos.jpg"/>
+					<p>{{'mnu_eventos' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onCanjes()">
+					<img src="assets/img/imgcanjes.jpg"/>
+					<p>{{'mnu_canjes' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onReservas()">
+					<img src="assets/img/imgreservas2.jpg"/>
+					<p>{{'mnu_reservas' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onZeusReservas()">
+					<img src="assets/img/imgreservas.jpg"/>
+					<p>{{'mnu_reservaszeus' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onServicios()">
+					<img src="assets/img/imgservicios.jpg"/>
+					<p>{{'mnu_servicios' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onClub()">
+					<img src="assets/img/img_club.png"/>
+					<p>{{'historiaclub_title' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onInvitados()">
+					<img src="assets/img/imginvitados.jpg"/>
+					<p>{{'invitados_title' | translate}}</p>
+				</ion-col>
+
+				<ion-col width-20 (click)="onSugerencias()">
+					<img src="assets/img/imgsugerencias.jpg"/>
+					<p>{{'sugerencias_title' | translate}}</p>
+				</ion-col>
+		</ion-row>
+	</ion-grid>
+	-->
+</ion-content>

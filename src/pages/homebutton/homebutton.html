@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>Zeus Clubes Mobile</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="grid-full">
+    <ion-grid>
+ 
+      <ion-row class="ionrow2">
+        <ion-col></ion-col>
+      </ion-row>
+ 
+      <ion-row class="ionrow1">
+            <ion-col >
+
+							<button ion-button block icon-left color="facebook" (click)="onLogin()">
+								{{'menu_Login' | translate}}
+							</button>
+
+							<button ion-button block icon-left color="royal" (click)="onSignup()">
+								{{'menu_Signup' | translate}}
+							</button>
+
+							<button ion-button block icon-left color="secondary" (click)="onEnterprisesTour()">
+								{{'menu_enterprise' | translate}}
+							</button>
+
+							<button ion-button block icon-left color="danger" (click)="onSupport()">
+								{{'menu_Support' | translate}}
+							</button>
+													
+            </ion-col>
+      </ion-row>
+ 
+      <ion-row class="ionrow2">
+        <ion-col></ion-col>
+      </ion-row>
+ 
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-header>
+	<ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'eventos_title' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-navbar>
+        <ion-segment [(ngModel)]="segmentvalue">
+            <ion-segment-button value="mes">
+                {{'eventos_mes' | translate}}
+            </ion-segment-button>
+            <ion-segment-button value="all">
+                {{'estadocuenta_all' | translate}}
+            </ion-segment-button>
+        </ion-segment>   
+	</ion-navbar>    
+
+    <div *ngIf="segmentvalue=='mes'">
+        <ion-searchbar color="primary"
+                        placeholder="Buscar evento">
+        </ion-searchbar>
+        
+        <ion-grid fixed >
+            <ion-row>
+                <ion-col *ngFor="let item of listeventos" col-12 col-sm-3 col-md-3 col-lg-4 col-xl-4>
+                    <ion-card>
+                        <iframe *ngIf="item.urlvideo!=''" src={{safeResourceUrl()}} frameborder="0" style="width: 100%;"></iframe>
+                        <img *ngIf="item.urlimagen!=''" src={{item.urlimagen}}/>
+                        
+                        <ion-card-content style="text-align: center;">
+                            <ion-card-title style="font-weight: bold;">
+                                {{item.titulo}}
+                            </ion-card-title>
+                            <p>{{item.parrafo}}</p>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>        
+    </div>    
+
+    <div *ngIf="segmentvalue=='all'">
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label stacked>{{'canjes_date1' | translate}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fechainicial"></ion-datetime>
+                </ion-item>
+                
+            </ion-col>
+
+            <ion-col>
+                <ion-item>
+                    <ion-label stacked>{{'canjes_date2' | translate}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fechafinal"></ion-datetime>
+                </ion-item>
+            </ion-col>
+
+            <ion-col width-20 center>
+                <ion-icon name="search" style="font-size: 30px;"></ion-icon>
+            </ion-col>
+            
+        </ion-row>
+        
+    </div>    
+
+</ion-content>

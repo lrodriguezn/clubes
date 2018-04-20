@@ -1,0 +1,47 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>{{'canjes_title' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-navbar>
+    <ion-segment [(ngModel)]="segmentvalue">
+      <ion-segment-button value="allcanje">
+        {{'canjes_all' | translate}}
+      </ion-segment-button>
+      <ion-segment-button value="newcanje" >
+        {{'canjes_new' | translate}}
+      </ion-segment-button>
+    </ion-segment>    
+  </ion-navbar>
+
+    <ion-list *ngIf="segmentvalue=='newcanje'">
+        <ion-list-header>
+          {{'canjes_titlelist' | translate}}
+        </ion-list-header>      
+
+        <z-enterprise *ngFor="let enterprise of enterprises"
+          [enterprise]="enterprise"
+          [buttons]="buttons"
+          (buttonclick)="Enterpriseclick($event)"
+          >
+        </z-enterprise>  
+    </ion-list> 
+
+
+    <ion-list *ngIf="segmentvalue=='allcanje'">
+     <!-- <h2 *ngFor="let canje of canjes">{{canje.code}}</h2>-->
+
+      <z-canje *ngFor="let canje of canjes"
+           [canje]="canje"
+           (edit)="CanjeDetail($event)"
+        >
+      </z-canje>          
+ 
+    </ion-list> 
+
+</ion-content>

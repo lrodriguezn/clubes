@@ -1,0 +1,62 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>{{'canjes_add' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content nopadding>
+   
+    <form #canjeForm="ngForm" novalidate (ngSubmit)="onNewCanje(canjeForm)">
+      <ion-list inset>
+      
+        <ion-item>
+          <ion-label stacked>{{'canjes_date1' | translate}}</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="canje.fechainicial" name="date1" #date1="ngModel" required></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>{{'canjes_date2' | translate}}</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="canje.fechafinal" name="date2" #date1="ngModel" required></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>{{'canjes_datail' | translate}}</ion-label>
+          <ion-textarea [(ngModel)]="canje.detalles" name="detail" #detail="ngModel" rows="1"></ion-textarea>
+        </ion-item>
+
+        <ion-list>
+            <ion-list-header style="padding: 0; margin: 0">
+              <h2>{{'canjes_socios' | translate}}</h2>
+            </ion-list-header>      
+
+            <ion-item>
+              <ion-label>Camila Torres Gonzalez</ion-label>
+              <ion-checkbox style="margin: 0px 5px 0px 0px;"></ion-checkbox>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Matilda Perez Torres</ion-label>
+              <ion-checkbox style="margin: 0px 5px 0px 0px;"></ion-checkbox>
+            </ion-item> 
+
+            <ion-item>
+              <ion-label>Luis E Perez Torres</ion-label>
+              <ion-checkbox style="margin: 0px 5px 0px 0px;"></ion-checkbox>
+            </ion-item>  
+
+        </ion-list> 
+
+        <button ion-button block color="facebook" type="submit">
+          {{'canjes_add' | translate}}
+        </button>          
+
+        <button ion-button block item-left color="danger" (click)="onCancel()">
+          {{'login_Cancel' | translate}}
+        </button>     
+      </ion-list>
+    </form>
+
+</ion-content>

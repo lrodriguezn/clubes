@@ -1,0 +1,16 @@
+<ion-card padding>
+    <p style="display:inline; padding: 0; margin: 0; text-align: center;">{{'canjes_title' | translate}} #: {{canje.code}}</p>
+    <button
+            style="padding: 0px 0px 0px 10px; margin: 0; text-align: center"
+            ion-button                         
+            small
+            clear
+            (click)="EditCanje()">
+         {{'canjes_detalles' | translate}}
+    </button>
+    
+    <p>Club: <span style="font-weight: bold;">{{canje.club.name}}</span></p>
+    <p>Fechas: {{canje.fechainicial}} - {{canje.fechafinal}}</p>
+    <p>Estado: <span ion-text [color]="getColorEstadoCanje()" style="font-weight: bold;"> {{getEstadoCaje()}}</span> </p>
+</ion-card>
+

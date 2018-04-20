@@ -1,0 +1,234 @@
+
+<ion-header>
+	<ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'ingresos_title' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-navbar>
+        <ion-segment [(ngModel)]="segmentvalue">
+            <ion-segment-button value="mes">
+                {{'ingresos_mes' | translate}}
+            </ion-segment-button>
+            <ion-segment-button value="all">
+                {{'ingresos_all' | translate}}
+            </ion-segment-button>
+            <ion-segment-button value="solicitud" >
+                {{'ingresos_solicitar' | translate}}
+            </ion-segment-button>
+        </ion-segment>   
+	</ion-navbar>    
+
+    <div *ngIf="segmentvalue=='mes'">
+        <ion-item>
+            <ion-label>Ingresos</ion-label>
+            <ion-toggle checked="true"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Salidas</ion-label>
+            <ion-toggle checked="true"></ion-toggle>
+        </ion-item>
+                
+        <ion-list>
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_open.jpg"/>
+                </ion-avatar>
+                <p ion-tex color="primary">Ingreso:2016/02/10 10:22:05 AM</p>
+            </ion-item>
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_close.jpg"/>
+                </ion-avatar>
+                <p ion-tex color="danger2">Salida:2016/02/10 12:05:00 PM</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_open.jpg"/>
+                </ion-avatar>
+                <p ion-tex color="primary">Ingreso:2016/02/08 04:08:30 PM</p>
+            </ion-item>
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_close.jpg"/>
+                </ion-avatar>
+                <p ion-tex color="danger2">Salida:2016/02/08 06:44:22 PM</p>
+            </ion-item>
+
+        </ion-list> 
+        
+    </div>    
+
+    <div *ngIf="segmentvalue=='all'">
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label stacked>{{'canjes_date1' | translate}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fechainicial"></ion-datetime>
+                </ion-item>
+                
+            </ion-col>
+
+            <ion-col>
+                <ion-item>
+                    <ion-label stacked>{{'canjes_date2' | translate}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fechafinal"></ion-datetime>
+                </ion-item>
+            </ion-col>
+
+            <ion-col width-20 center>
+                <ion-icon name="search" style="font-size: 30px;"></ion-icon>
+            </ion-col>
+            
+        </ion-row>
+            
+        <ion-item>
+            <ion-label>Ingresos</ion-label>
+            <ion-toggle checked="true"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Salidas</ion-label>
+            <ion-toggle checked="true"></ion-toggle>
+        </ion-item>
+                
+        <ion-list>
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes: 2017/03</p>
+                <p>Total: 2,500,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2017/02</p>
+                <p>Total: 1,500,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2017/01</p>
+                <p>Total: 1,700,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/12</p>
+                <p>Total: 1,755,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/11</p>
+                <p>Total: 1,220,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/10</p>
+                <p>Total: 2,220,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/09</p>
+                <p>Total: 1,730,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/08</p>
+                <p>Total: 3,730,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/07</p>
+                <p>Total: 1,750,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/06</p>
+                <p>Total: 4,730,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/05</p>
+                <p>Total: 1,800,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/04</p>
+                <p>Total: 730,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/03</p>
+                <p>Total: 2,000,000.00</p>
+            </ion-item>            
+        </ion-list> 
+        
+    </div>    
+
+    <div *ngIf="segmentvalue=='solicitud'">
+
+        <form #canjeForm="ngForm" novalidate (ngSubmit)="onEnviar(canjeForm)">
+            <ion-list inset>
+            
+                <ion-item>
+                    <ion-label stacked>{{'canjes_datail' | translate}} (Opcional)</ion-label>
+                    <ion-textarea [(ngModel)]="detalles" name="detail" #detail="ngModel" rows="3"></ion-textarea>
+                </ion-item>
+
+                <button ion-button block color="facebook" type="submit">
+                    Enviar Solicitud de Ingreso al Club
+                </button>          
+
+                <button ion-button block item-left color="danger" (click)="onCancel()">
+                    {{'login_Cancel' | translate}}
+                </button>     
+            </ion-list>
+        </form>
+            
+
+    </div>
+
+
+</ion-content>

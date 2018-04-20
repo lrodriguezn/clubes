@@ -1,0 +1,303 @@
+<ion-header>
+	<ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'estadocuenta_title' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-navbar>
+        <ion-segment [(ngModel)]="segmentvalue">
+            <ion-segment-button value="anno">
+                {{'estadocuenta_anno' | translate}}
+            </ion-segment-button>
+            <ion-segment-button value="all">
+                {{'estadocuenta_all' | translate}}
+            </ion-segment-button>
+            <ion-segment-button value="solicitud" >
+                {{'estadocuenta_solicitar' | translate}}
+            </ion-segment-button>
+        </ion-segment>   
+	</ion-navbar>    
+
+    <div *ngIf="segmentvalue=='anno'">
+        <ion-searchbar color="primary"
+                        placeholder="Buscar estado cuenta del mes">
+        </ion-searchbar>
+        
+        <ion-list>
+            <ion-item>
+<!--            <ion-thumbnail item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-thumbnail>          
+-->            
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes: 2016/01</p>
+                <p  ion-text color="royal">Total: 2,500,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/02</p>
+                <p  ion-text color="royal">Total: 1,500,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/03</p>
+                <p  ion-text color="royal">Total: 1,700,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/04</p>
+                <p  ion-text color="royal">Total: 3,700,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/05</p>
+                <p  ion-text color="royal">Total: 1,500,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/06</p>
+                <p ion-text color="royal">Total: 1,550,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/07</p>
+                <p  ion-text color="royal">Total: 2,500,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/08</p>
+                <p ion-text color="royal">Total: 3,500,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/09</p>
+                <p ion-text color="royal">Total: 1,600,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/10</p>
+                <p ion-text color="royal">Total: 2,220,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/11</p>
+                <p ion-text color="royal">Total: 1,220,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/12</p>
+                <p ion-text color="royal">Total: 1,755,000.00</p>
+            </ion-item>
+
+        </ion-list> 
+        
+    </div>    
+
+    <div *ngIf="segmentvalue=='all'">
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label stacked>{{'canjes_date1' | translate}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fechainicial"></ion-datetime>
+                </ion-item>
+                
+            </ion-col>
+
+            <ion-col>
+                <ion-item>
+                    <ion-label stacked>{{'canjes_date2' | translate}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fechafinal"></ion-datetime>
+                </ion-item>
+            </ion-col>
+
+            <ion-col width-20 center>
+                <ion-icon name="search" style="font-size: 30px;"></ion-icon>
+            </ion-col>
+            
+        </ion-row>
+            
+        
+        <ion-list>
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes: 2017/03</p>
+                <p ion-text color="royal">Total: 2,500,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2017/02</p>
+                <p ion-text color="royal">Total: 1,500,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2017/01</p>
+                <p ion-text color="royal">Total: 1,700,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/12</p>
+                <p ion-text color="royal">Total: 1,755,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/11</p>
+                <p ion-text color="royal">Total: 1,220,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/10</p>
+                <p ion-text color="royal">Total: 2,220,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/09</p>
+                <p ion-text color="royal">Total: 1,730,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/08</p>
+                <p ion-text color="royal">Total: 3,730,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/07</p>
+                <p ion-text color="royal">Total: 1,750,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/06</p>
+                <p ion-text color="royal">Total: 4,730,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/05</p>
+                <p ion-text color="royal">Total: 1,800,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/04</p>
+                <p ion-text color="royal">Total: 730,000.00</p>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-left>
+                    <img src="assets/img/img_pdf.jpg"/>
+                </ion-avatar>
+                <p>Mes:2016/03</p>
+                <p ion-text color="royal">Total: 2,000,000.00</p>
+            </ion-item>            
+        </ion-list> 
+        
+    </div>    
+
+    <div *ngIf="segmentvalue=='solicitud'">
+
+    <form #canjeForm="ngForm" novalidate (ngSubmit)="onEnviar(canjeForm)">
+      <ion-list inset>
+      
+        <ion-item>
+          <ion-label stacked>{{'canjes_date1' | translate}}</ion-label>
+          <ion-datetime displayFormat="YYYY/MM" [(ngModel)]="fechainicial" name="date1" #date1="ngModel" required></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>{{'canjes_date2' | translate}}</ion-label>
+          <ion-datetime displayFormat="YYYY/MM" [(ngModel)]="fechafinal" name="date2" #date1="ngModel" required></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>{{'canjes_datail' | translate}}</ion-label>
+          <ion-textarea [(ngModel)]="detalles" name="detail" #detail="ngModel" rows="1"></ion-textarea>
+        </ion-item>
+
+        <button ion-button block color="facebook" type="submit">
+          Enviar
+        </button>          
+
+        <button ion-button block item-left color="danger" (click)="onCancel()">
+          {{'login_Cancel' | translate}}
+        </button>     
+      </ion-list>
+    </form>
+          
+
+
+    </div>
+
+
+</ion-content>

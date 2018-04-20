@@ -1,0 +1,255 @@
+<ion-header>
+	<ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'consumos_title' | translate}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-navbar>
+        <ion-segment [(ngModel)]="segmentvalue">
+            <ion-segment-button value="mes">
+                {{'consumos_mes' | translate}}
+            </ion-segment-button>
+            <ion-segment-button value="all" >
+                {{'consumos_all' | translate}}
+            </ion-segment-button>
+        </ion-segment>    
+	</ion-navbar> 
+
+    <div *ngIf="segmentvalue=='mes'">
+        <ion-searchbar color="primary"
+                        placeholder="Buscar consumos por punto">
+        </ion-searchbar>
+        
+        <p style="font-weight: bold; margin: 0 0 0 10px;">Consumos del Mes:  <span ion-text color="secondary">20</span><p>
+        <p style="font-weight: bold; margin: 0 0 0 10px;"> Total Facturas:<span ion-text color="secondary">2,500,450.00</span><p>
+        
+        <ion-list *ngIf="segmentvalue=='mes'">
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/15 07:05 PM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>            
+                <p>Solicitado: <span>N001-01</span></p>
+                <p>Factura#: <span>88-000050 </span></p>
+                <p>Valor: <span>179.250.00 </span></p>
+                <p>POS: <span>Restaurante El Mar Azul </span></p>
+            </ion-card>
+
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/10 08:05 PM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>
+                <p>Solicitado: <span>N001-01</span></p>
+                <p>Factura#: <span>88-000001 </span></p>
+                <p>Valor: <span>200.000.00 </span></p>
+                <p>POS: <span>Restaurante Salon Rojo </span></p>
+            </ion-card>
+
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/08 10:05 PM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>
+                <p>Solicitado: <span>N001-02</span></p>
+                <p>Factura#: <span>88-000011 </span></p>
+                <p>Valor: <span>800.000.00 </span></p>
+                <p>POS: <span>DiscoBar Piso 21 </span></p>
+            </ion-card>
+
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/07 04:00 PM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>
+                <p>Solicitado: <span>N001-02</span></p>
+                <p>Factura#: <span>88-000011 </span></p>
+                <p>Valor: <span>7200.000.00 </span></p>
+                <p>POS: <span>Matrimonio Salon II</span></p>
+            </ion-card>
+
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/07 02:05 PM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>
+                <p>Solicitado: <span>N001-02</span></p>
+                <p>Factura#: <span>88-000300 </span></p>
+                <p>Valor: <span>550.000.00 </span></p>
+                <p>POS: <span>Matrimonio Salon II </span></p>
+            </ion-card>
+
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/05 11:05 AM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>
+                <p>Solicitado: <span>N001-02</span></p>
+                <p>Factura#: <span>88-000302 </span></p>
+                <p>Valor: <span>800.000.00 </span></p>
+                <p>POS: <span>DiscoBar Piso 21 </span></p>
+            </ion-card>                
+        </ion-list> 
+        
+    </div>    
+
+    <div *ngIf="segmentvalue=='all'">
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label stacked>{{'canjes_date1' | translate}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fechainicial"></ion-datetime>
+                </ion-item>
+                
+            </ion-col>
+
+            <ion-col>
+                <ion-item>
+                    <ion-label stacked>{{'canjes_date2' | translate}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fechafinal"></ion-datetime>
+                </ion-item>
+            </ion-col>
+
+            <ion-col width-20 center>
+                <ion-icon name="search" style="font-size: 30px;"></ion-icon>
+            </ion-col>
+            
+        </ion-row>
+            
+        <ion-searchbar color="primary"
+                        placeholder="Buscar consumos por punto">
+        </ion-searchbar>            
+
+        <ion-list *ngIf="segmentvalue=='all'">
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/05 11:05 AM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>
+                <p>Solicitado: <span>N001-02</span></p>
+                <p>Factura#: <span>88-000302 </span></p>
+                <p>Valor: <span>800.000.00 </span></p>
+                <p>POS: <span>DiscoBar Piso 21 </span></p>
+            </ion-card>                
+
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/05 11:05 AM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>
+                <p>Solicitado: <span>N001-02</span></p>
+                <p>Factura#: <span>88-000302 </span></p>
+                <p>Valor: <span>620.000.00 </span></p>
+                <p>POS: <span>DiscoBar Piso 21 </span></p>
+            </ion-card>                
+
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/05 11:05 AM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>
+                <p>Solicitado: <span>N001-02</span></p>
+                <p>Factura#: <span>88-000302 </span></p>
+                <p>Valor: <span>120.000.00 </span></p>
+                <p>POS: <span>Restaurante Salon Rojo </span></p>
+            </ion-card>                
+
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/05 11:05 AM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>
+                <p>Solicitado: <span>N001-02</span></p>
+                <p>Factura#: <span>88-000331 </span></p>
+                <p>Valor: <span>200.000.00 </span></p>
+                <p>POS: <span>DiscoBar Piso 21</span></p>
+            </ion-card>                
+
+            <ion-card padding>
+                <p style="display:inline; padding: 0; margin: 0; text-align: center;">Fecha: <span>2017/03/05 11:05 AM </span></p>
+                <button
+                    style="padding: 0px 0px 0px 10px; margin: 0;"
+                    ion-button                         
+                    small
+                    clear
+                    (click)="onDetail()"
+                        >
+                Ver Productos
+                </button>
+                <p>Solicitado: <span>N001-02</span></p>
+                <p>Factura#: <span>88-000330 </span></p>
+                <p>Valor: <span>20.000.00 </span></p>
+                <p>POS: <span>Cancha de Tenis </span></p>
+            </ion-card>                
+
+        </ion-list> 
+
+    </div>
+
+
+</ion-content>
